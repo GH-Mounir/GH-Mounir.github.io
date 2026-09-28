@@ -1,11 +1,11 @@
-import profilePic from "../assets/images/mounir_portrait_exact_1790584376178.jpg";
-
 export interface Publication {
   id: string;
   title: string;
+  paperType: string;
+  status: string;
   authors: string[];
-  venue: string;
-  year: number;
+  venue?: string;
+  year?: number | string;
   abbr?: string;
   doi?: string;
   pdfUrl?: string;
@@ -13,7 +13,8 @@ export interface Publication {
   bibtex?: string;
   previewImg?: string;
   selected?: boolean;
-  category: "AI & Inference" | "Multimedia QoE" | "Foundations & Physics";
+  category: string;
+  topics: string[];
   badges?: string[];
   award?: string;
 }
@@ -30,6 +31,16 @@ export interface Project {
   link?: string;
   year: string;
   highlights: string[];
+  metrics?: { label: string; value: string }[];
+  researchQuestions?: string[];
+  keyIdea?: string;
+  quote?: string;
+  corePrinciple?: string;
+  goal?: string;
+  features?: string[];
+  techStack?: string[];
+  dimensions?: string[];
+  layers?: string[];
 }
 
 export interface NewsItem {
@@ -79,7 +90,6 @@ export interface AcademicReferee {
 export interface CVData {
   name: string;
   label: string;
-  phone: string;
   email: string;
   location: string;
   summary: string;
@@ -126,9 +136,8 @@ export interface CVData {
 export const authorData = {
   name: "Mounir GHARSALLAH",
   role: "Independent Researcher",
-  titleDetails: "Multimedia (QoE), Process Mining & AI-Augmented Multimedia Systems",
+  titleDetails: "Multimodal Behavioral Modeling, Human-AI Interaction, Latent State Inference & Human-Centered AI",
   institution: "Tunis, Tunisia",
-  phone: "+216 50 78 48 78",
   email: "mounir.gharsallah@enicar.ucar.tn",
   orcid: "0000-0002-4200-6035",
   orcidUrl: "https://orcid.org/0000-0002-4200-6035",
@@ -136,8 +145,7 @@ export const authorData = {
   githubUsername: "GH-Mounir",
   linkedin: "https://www.linkedin.com/in/mounir-gharsallah-05791b256/",
   linkedinUsername: "mounir-gharsallah",
-  avatar: profilePic,
-  tagline: "Independent Researcher in Multimedia (QoE), Process Mining & AI-Augmented Multimedia Systems",
+  tagline: "Independent Researcher | Multimodal Behavioral Modeling, Human-AI Interaction, Latent State Inference & Human-Centered AI",
   bio: [
     "I am an independent researcher working at the intersection of Multimedia Quality of Experience (QoE), Process Science, Behavioural Science, and Artificial Intelligence. My research focuses on modelling user experience through observable event traces generated during multimedia consumption.",
     "I developed a dedicated crowdsourced mobile PWA experimentation testbed and constructed a proprietary event-centric dataset containing > 41,000 streaming-related events collected under real-world conditions from 41 human subjects (compliant with ITU-T P.910 and P.1204 standards).",
@@ -164,8 +172,7 @@ export const authorData = {
 
 export const cvData: CVData = {
   name: "Mounir GHARSALLAH",
-  label: "Independent Researcher | Multimedia (QoE), Process Mining & AI-Augmented Multimedia Systems",
-  phone: "+216 50 78 48 78",
+  label: "Independent Researcher | Multimodal Behavioral Modeling, Human-AI Interaction, Latent State Inference & Human-Centered AI",
   email: "mounir.gharsallah@enicar.ucar.tn",
   location: "Tunis, Tunisia",
   orcid: "0000-0002-4200-6035",
@@ -503,149 +510,215 @@ export const cvData: CVData = {
 
 export const publications: Publication[] = [
   {
-    id: "gharsallah2024qoe",
-    title: "Bayesian Ordinal Modeling for User-Centric Video Quality of Experience in Distributed Edge Networks",
+    id: "iob-qoe-suite",
+    title: "IoB-QoE Suite: A Multimodal Event-Centric Dataset for Process-Aware Video Quality of Experience Research",
+    paperType: "Dataset paper",
+    status: "Manuscript in preparation",
     authors: ["Mounir Gharsallah"],
-    venue: "Working Paper / Preprint Series",
-    year: 2025,
-    abbr: "Preprint",
+    venue: "Manuscript in preparation",
+    year: "2025",
+    abbr: "Dataset",
     category: "Multimedia QoE",
+    topics: ["QoE", "Process Mining", "Human Behavior", "Multimodal Data"],
+    badges: ["Dataset paper", "Manuscript in preparation"],
     selected: true,
     abstract:
-      "Modern multimedia streaming services increasingly demand fine-grained, uncertainty-aware Quality of Experience (QoE) prediction directly at the network edge. We propose a hierarchical Bayesian ordinal regression framework that captures cognitive subjective user ratings while respecting the discrete, ranked nature of perceptual scales.",
-    bibtex: `@article{gharsallah2025bayesian,
-  title={Bayesian Ordinal Modeling for User-Centric Video Quality of Experience in Distributed Edge Networks},
+      "A comprehensive multimodal event-centric dataset and experimentation suite designed for process-aware video Quality of Experience (QoE) research, capturing fine-grained client-side telemetry, streaming event logs, and subjective perceptual evaluations.",
+    bibtex: `@unpublished{gharsallah2025iobqoe,
+  title={IoB-QoE Suite: A Multimodal Event-Centric Dataset for Process-Aware Video Quality of Experience Research},
   author={Gharsallah, Mounir},
   year={2025},
-  journal={arXiv preprint}
+  note={Manuscript in preparation}
 }`,
-    badges: ["Selected", "Bayesian QoE", "Edge AI"],
   },
   {
-    id: "gharsallah2024ultrametric",
-    title: "Ultrametric Belief Topologies for Cognitively Grounded Decision Systems under Severe Ambiguity",
+    id: "event-centric-process-mining",
+    title: "Event-Centric Process Mining for Human Experience Modeling",
+    paperType: "Research paper",
+    status: "Ongoing research",
     authors: ["Mounir Gharsallah"],
-    venue: "Manuscript in Preparation",
-    year: 2024,
+    venue: "Ongoing research",
+    year: "2025",
     abbr: "Research",
-    category: "AI & Inference",
+    category: "Process Mining & Behavioral Analytics",
+    topics: ["Process Mining", "Behavioral Analytics", "Event Traces"],
+    badges: ["Research paper", "Ongoing research"],
     selected: true,
     abstract:
-      "Human judgment under uncertainty often violates classical Euclidean metric axioms. We investigate tree-like ultrametric spaces as cognitive representations for hierarchical categorizations, demonstrating improved robustness against conflicting evidence in high-dimensional state spaces.",
-    bibtex: `@article{gharsallah2024ultrametric,
-  title={Ultrametric Belief Topologies for Cognitively Grounded Decision Systems under Severe Ambiguity},
+      "Investigating event-centric process discovery and behavioral state tracking to model continuous human multimedia experience and identify degradation pathways from streaming interaction sequences.",
+    bibtex: `@unpublished{gharsallah2025processmining,
+  title={Event-Centric Process Mining for Human Experience Modeling},
   author={Gharsallah, Mounir},
-  year={2024}
+  year={2025},
+  note={Ongoing research}
 }`,
-    badges: ["Selected", "Cognitive AI", "Ultrametric"],
   },
   {
-    id: "gharsallah2022masterthesis",
-    title: "Anomaly Detection for Video Quality of Experience (VQoE) in Fog Computing Architectures",
+    id: "latent-user-states",
+    title: "Inferring Latent User States from Multimodal Behavioral Traces",
+    paperType: "Concept paper",
+    status: "Research direction under development",
     authors: ["Mounir Gharsallah"],
-    venue: "ENICarthage Master Thesis, Data Science & Mobiquity",
-    year: 2022,
-    abbr: "MSc Thesis",
-    category: "Multimedia QoE",
-    selected: false,
+    venue: "Research direction under development",
+    year: "2025",
+    abbr: "Concept",
+    category: "Latent State Inference & HAI",
+    topics: ["Human-Centered AI", "Partial Observability", "Decision Processes"],
+    badges: ["Concept paper", "Research direction under development"],
+    selected: true,
     abstract:
-      "Design and implementation of real-time telemetry pipelines and anomaly detection models targeting video streaming degradations within decentralized fog computing nodes.",
-    bibtex: `@mastersthesis{gharsallah2022vqe,
-  title={Anomaly Detection for Video Quality of Experience (VQoE) in Fog Computing Architectures},
+      "Formulating probabilistic latent state inference models under partial observability to decode underlying cognitive, affective, and behavioral dynamics from multimodal interaction traces.",
+    bibtex: `@unpublished{gharsallah2025latentstates,
+  title={Inferring Latent User States from Multimodal Behavioral Traces},
   author={Gharsallah, Mounir},
-  school={Ecole Nationale d’Ingénieurs de Carthage (ENICarthage)},
-  year={2022}
+  year={2025},
+  note={Research direction under development}
 }`,
-    badges: ["Master's Thesis", "Fog Computing"],
-  },
-  {
-    id: "einstein1935epr",
-    title: "Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?",
-    authors: ["Albert Einstein", "Boris Podolsky", "Nathan Rosen"],
-    venue: "Physical Review, Vol. 47, Iss. 10",
-    year: 1935,
-    abbr: "Phys. Rev.",
-    doi: "10.1103/PhysRev.47.777",
-    category: "Foundations & Physics",
-    selected: false,
-    abstract:
-      "In a complete theory there is an element corresponding to each element of reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system leads to the conclusion that the description of reality given by a wave function is incomplete.",
-    bibtex: `@article{PhysRev.47.777,
-  title = {Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author = {Einstein, A. and Podolsky, B. and Rosen, N.},
-  journal = {Phys. Rev.},
-  volume = {47},
-  pages = {777--780},
-  year = {1935},
-  doi = {10.1103/PhysRev.47.777}
-}`,
-    badges: ["Historical Milestone", "Quantum Foundations"],
   },
 ];
 
 export const projects: Project[] = [
   {
     id: "project-1",
-    title: "AI-Driven Multimedia QoE and Ordinal Decision Modeling",
-    subtitle: "Interpretable Bayesian framework for human-centric video streaming optimization",
+    title: "IoB-QoE Suite",
+    subtitle: "Multimodal Event-Centric Dataset for Human Experience Modeling",
     description:
-      "Developing mathematically rigorous ordinal modeling pipelines that respect the ordinal nature of human Mean Opinion Scores (MOS), predicting degradation anomalies at the edge.",
+      "A multimodal in-the-wild dataset capturing 44 participants, 1,112 viewing sessions, and 40,000+ behavioral and system events collected across human factors, system telemetry, network observations, context variables, and content characteristics.",
     category: "Research",
-    image: "/assets/img/12.jpg",
-    tags: ["Bayesian Modeling", "Video QoE", "Fog Computing", "Ordinal Regression"],
-    year: "2023 – Present",
+    image: "/assets/img/QoE-IoB Suite.jpg",
+    tags: ["Multimodal Dataset", "Event-Centric", "Behavioral QoE", "40k+ Events", "Human Factors"],
+    year: "2024 – Present",
+    metrics: [
+      { label: "Participants", value: "44 Human Subjects" },
+      { label: "Viewing Sessions", value: "1,112 Sessions" },
+      { label: "Logged Events", value: "40,000+ Traces" },
+      { label: "Standards", value: "ITU-T P.910 & P.1204" },
+    ],
+    researchQuestions: [
+      "How do human judgments and subjective QoE emerge over continuous observation?",
+      "Can latent user states be inferred reliably from granular event traces?",
+      "How can observable micro-behaviors explain subjective experience and dissatisfaction?",
+    ],
     highlights: [
-      "Formulated hierarchical Bayesian ordinal likelihoods reflecting subjective human rating variability.",
-      "Integrated edge telemetry collectors for low-latency anomaly diagnosis.",
-      "Demonstrated superior calibration compared to standard regression baselines on subjective video datasets.",
+      "Captured multi-modal data streams across 44 participants interacting in natural mobile environments.",
+      "Synchronized system telemetry, network fluctuations, context parameters, and content complexity.",
+      "Formulated standard event log format ready for process mining discovery and Bayesian inference.",
     ],
   },
   {
     id: "project-2",
-    title: "Ultrametric Belief Systems & Cognitive Inference",
-    subtitle: "Non-Euclidean geometrical structures for reasoning under uncertainty",
+    title: "FogRL Platform",
+    subtitle: "Event-Centric Experimentation Infrastructure",
     description:
-      "Explores hierarchical and p-adic distance structures in cognitive inference to model human belief transitions and categorical judgments in complex environments.",
-    category: "Cognitive Modeling",
-    image: "/assets/img/1.jpg",
-    tags: ["Ultrametric Spaces", "Cognitive AI", "Decision Theory", "Quantum Cognition"],
+      "A Progressive Web Application (PWA) designed for high-precision QoE experimentation, client-side telemetry harvesting, and real-time behavioral observation under realistic mobile network conditions.",
+    category: "Development",
+    image: "/assets/img/Fogrl.jpg",
+    tags: ["PWA Testbed", "IndexedDB", "DASH Streaming", "Pub/Sub", "Fog Telemetry"],
     year: "2023 – Present",
+    features: [
+      "Adaptive MPEG-DASH playback monitoring & bitrate adaptation instrumentation",
+      "Robust client-side IndexedDB event logging and offline-first queueing",
+      "Context acquisition engine (RF telemetry, battery, viewport, ambient orientation)",
+      "Crowdsourced evaluation workflow for unconstrained subjective testing",
+    ],
+    techStack: ["PWA", "JavaScript / TypeScript", "IndexedDB", "Pub/Sub Architecture", "DASH Streaming", "Fog Telemetry"],
     highlights: [
-      "Constructed tree-structured state representations yielding invariant decision boundaries under scale shifts.",
-      "Developed mathematical proofs comparing ultrametric distance bounds against traditional cosine and Euclidean embeddings.",
-      "Applied cognitive priors to noisy multi-agent communication simulations.",
+      "Engineered asynchronous pub/sub telemetry dispatcher handling sub-millisecond event emissions without UI lag.",
+      "Implemented persistent client-side caching with automated sync to fog gateways upon reconnection.",
+      "Benchmarked on diverse mobile devices across varying cellular network conditions.",
     ],
   },
   {
     id: "project-3",
-    title: "Fog-Based VQoE Anomaly Detection Engine",
-    subtitle: "Real-time edge telemetry and unsupervised anomaly detection",
+    title: "Process-Aware User Modeling",
+    subtitle: "Human Behavior Through Process Mining",
+    quote: "Treating human interactions as behavioral trajectories rather than isolated observations.",
+    keyIdea: "Events → Event Logs → Behavioral Processes → Latent States",
     description:
-      "End-to-end framework for intercepting video stream packet flows, extracting temporal jitter, bitrate fluctuation, and rebuffering signatures for localized diagnosis.",
-    category: "Development",
-    image: "/assets/img/7.jpg",
-    tags: ["Edge Computing", "Anomaly Detection", "Stream Telemetry", "Python"],
-    year: "2021 – 2022",
+      "Applying process mining algorithms to discover, inspect, and model human behavioral journeys during multimedia consumption, mapping raw interaction logs into structured process variants and transition matrices.",
+    category: "Research",
+    image: "/assets/img/ProcessExp4.jpg",
+    tags: ["Process Mining", "Celonis", "Transition Matrices", "Behavioral Trajectories", "Variant Analysis"],
+    year: "2024 – Present",
+    features: [
+      "Directly-Follows Graphs (DFG) and behavioral Spaghetti Model decomposition",
+      "Variant analysis identifying prevalent navigation trajectories and friction pathways",
+      "Stochastic transition matrices measuring probability shifts between behavioral states",
+      "Automated process discovery workflows utilizing Celonis and PM4Py",
+    ],
     highlights: [
-      "Lightweight model footprint optimized for deployment on resource-constrained fog gateways.",
-      "Real-time evaluation with simulated network impairments and dynamic bandwidth throttles.",
-      "Interactive analytics dashboard for inspecting session quality metrics.",
+      "Formulated methodology to map continuous temporal event streams into discrete process discovery logs.",
+      "Analyzed 1,112 session variants revealing distinct user navigation archetypes under network degradations.",
+      "Bridged process science and multimedia QoE to discover how buffering triggers specific behavioral branches.",
     ],
   },
   {
     id: "project-4",
-    title: "Microprocessor Architecture Emulator",
-    subtitle: "Instruction cycle simulator for embedded ARM architectures",
+    title: "Behavioral Analytics Framework",
+    subtitle: "Latent Cognitive & Behavioral State Inference",
+    goal: "Infer hidden user states from observable events.",
     description:
-      "Custom cycle-accurate emulator implementing core instruction sets, register banks, interrupt handling, and memory mapping for educational and verification purposes.",
-    category: "Development",
-    image: "/assets/img/3.jpg",
-    tags: ["Assembly", "Computer Architecture", "Emulation", "C/C++"],
-    year: "Academic Project",
+      "An inferential framework designed to infer hidden cognitive, affective, and intentional user states from continuous observable event streams and user-system interactions.",
+    category: "Cognitive Modeling",
+    image: "/assets/img/10.jpg",
+    tags: ["Latent State Inference", "POMDP", "Curiosity", "Hesitation Dynamics", "Decision Conflict"],
+    year: "2024 – Present",
+    dimensions: [
+      "Curiosity & Exploratory Search Dynamics",
+      "Hesitation & Deliberation Response Latencies",
+      "Choice Volatility & Sequential Preference Shifts",
+      "Decision Conflict & Rating Ambiguity",
+      "Dynamic Engagement & Attention Trajectories",
+    ],
     highlights: [
-      "Full cycle-accurate execution engine with step-by-step disassembly inspection.",
-      "Visual memory map and register tracking interface.",
-      "Verified against standard benchmark test suites.",
+      "Developed probabilistic formulations capturing uncertainty in subjective rating distributions.",
+      "Mapped observable interaction friction (repeated taps, seek volatility) to internal cognitive frustration states.",
+      "Constructed state-space models demonstrating predictive power over static post-hoc MOS questionnaires.",
+    ],
+  },
+  {
+    id: "project-5",
+    title: "Context-Aware QoE Observatory",
+    subtitle: "Environmental & Radio Frequency Context Analytics",
+    corePrinciple: "Experience ≠ Video Quality Alone",
+    description:
+      "A comprehensive multi-sensor context analytics observatory proving that subjective quality of experience is modulated by ambient, mobility, and radio-frequency conditions alongside pure video bitrate.",
+    category: "Research",
+    image: "/assets/img/3.jpg",
+    tags: ["Context-Aware QoE", "LTE / 5G RF Telemetry", "Geospatial Analytics", "Environmental Context"],
+    year: "2023 – Present",
+    layers: [
+      "Geospatial Analytics & Mobility Dynamics (Velocity, Route Transitions)",
+      "Atmospheric & Weather Intelligence (Temperature, Precipitation, Ambient Environment)",
+      "Radio Frequency (RF) & Cellular Telemetry (LTE/5G RSRP, RSRQ, SINR, Handover Events)",
+      "Device & Hardware Context (Viewport Dimensions, Battery Health, Thermal State, Screen Brightness)",
+    ],
+    highlights: [
+      "Demonstrated that identical network bandwidth produces divergent QoE ratings across different environmental contexts.",
+      "Integrated real-time mobile sensor APIs to capture ambient lighting and device motion signatures.",
+      "Constructed unified multi-sensor context profiles across all 1,112 dataset sessions.",
+    ],
+  },
+  {
+    id: "project-6",
+    title: "Frame Bitrate Explorer",
+    subtitle: "Multimedia Content & Video Dynamics Profiling",
+    description:
+      "Content-side spatial-temporal complexity and bitrate dynamics profiling engine, characterizing video encoding behavior and dynamic bandwidth demands for multimedia systems researchers.",
+    category: "Development",
+    image: "/assets/img/11.jpg",
+    tags: ["Frame Complexity", "Bitrate Dynamics", "UGC Profiling", "MPEG-DASH / AV1", "Multimedia Systems"],
+    year: "2023 – Present",
+    features: [
+      "Spatial Information (SI) and Temporal Information (TI) frame complexity extraction",
+      "Bitrate dynamics, burstiness, and GOP structure characterization",
+      "User-Generated Content (UGC) vs. Professional Video profiling across diverse genres",
+      "Perceptual encoding evaluation asset for MPEG-DASH, H.264/AVC, H.265/HEVC, and AV1",
+    ],
+    highlights: [
+      "Automated frame-level extraction pipeline computing perceptual entropy and motion vector fields.",
+      "Analyzed rate-distortion variations under adaptive streaming chunk allocations.",
+      "Created open dataset metadata repository for multimedia systems benchmarks.",
     ],
   },
 ];

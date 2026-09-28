@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { cvData } from "../data/portfolioData";
 import {
-  Download,
   GraduationCap,
   Briefcase,
   Award,
   Code2,
-  Printer,
   MapPin,
   Mail,
-  Phone,
   Sparkles,
   Check,
   ChevronDown,
@@ -19,15 +16,9 @@ import {
   Users2,
   FileCheck,
   ShieldCheck,
-  Terminal,
-  ExternalLink,
-  Cpu,
-  Database,
-  LineChart,
 } from "lucide-react";
 
 export const CVSection: React.FC = () => {
-  const [downloading, setDownloading] = useState(false);
   const [expandedSection, setExpandedSection] = useState<Record<string, boolean>>({
     education: true,
     experience: true,
@@ -42,28 +33,10 @@ export const CVSection: React.FC = () => {
     setExpandedSection((prev) => ({ ...prev, [section]: !prev[section] }));
   };
 
-  const handlePrint = () => {
-    window.print();
-  };
-
-  const handleDownloadPDF = () => {
-    setDownloading(true);
-    const link = document.createElement("a");
-    link.href = "/assets/pdf/example_pdf.pdf";
-    link.download = "Mounir_GHARSALLAH_Academic_CV.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    setTimeout(() => {
-      setDownloading(false);
-    }, 1500);
-  };
-
   return (
     <div className="space-y-8 animate-fadeIn max-w-4xl mx-auto font-sans">
       {/* CV Header Bar */}
-      <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 sm:p-8 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 sm:p-8 shadow-xs">
         <div>
           <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 text-xs font-semibold mb-2 border border-teal-200/60 dark:border-teal-800/60">
             <Sparkles className="w-3 h-3 text-teal-600 dark:text-teal-400" />
@@ -76,9 +49,6 @@ export const CVSection: React.FC = () => {
             <span className="flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-stone-400" /> {cvData.location}
             </span>
-            <a href={`tel:${cvData.phone}`} className="flex items-center gap-1.5 hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
-              <Phone className="w-3.5 h-3.5 text-stone-400" /> {cvData.phone}
-            </a>
             <a href={`mailto:${cvData.email}`} className="flex items-center gap-1.5 hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
               <Mail className="w-3.5 h-3.5 text-stone-400" /> {cvData.email}
             </a>
@@ -107,34 +77,6 @@ export const CVSection: React.FC = () => {
               LinkedIn
             </a>
           </div>
-        </div>
-
-        {/* Action buttons */}
-        <div className="flex items-center gap-2.5 w-full sm:w-auto shrink-0">
-          <button
-            onClick={handlePrint}
-            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 text-xs font-semibold hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors border border-stone-300/60 dark:border-stone-700"
-            title="Print CV"
-          >
-            <Printer className="w-4 h-4" />
-            Print
-          </button>
-          <button
-            onClick={handleDownloadPDF}
-            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-teal-700 dark:bg-teal-600 text-white text-xs font-semibold hover:bg-teal-800 dark:hover:bg-teal-500 transition-all shadow-xs"
-          >
-            {downloading ? (
-              <>
-                <Check className="w-4 h-4" />
-                Downloading...
-              </>
-            ) : (
-              <>
-                <Download className="w-4 h-4" />
-                Download PDF
-              </>
-            )}
-          </button>
         </div>
       </div>
 

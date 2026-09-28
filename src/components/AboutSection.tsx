@@ -1,21 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { authorData, newsItems, cvData } from "../data/portfolioData";
 import {
   MapPin,
   Mail,
-  Phone,
   ArrowUpRight,
   Award,
-  Sparkles,
   BookOpen,
   FileText,
   ChevronRight,
   CheckCircle2,
-  Layers,
   ShieldCheck,
-  Database,
-  LineChart,
-  Cpu,
 } from "lucide-react";
 
 interface AboutSectionProps {
@@ -23,19 +17,6 @@ interface AboutSectionProps {
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate }) => {
-  const [currentAvatar, setCurrentAvatar] = useState<string>(authorData.avatar);
-
-  useEffect(() => {
-    try {
-      const savedPhoto = localStorage.getItem("mounir_custom_avatar");
-      if (savedPhoto) {
-        setCurrentAvatar(savedPhoto);
-      }
-    } catch {
-      // Ignore
-    }
-  }, []);
-
   return (
     <div className="space-y-12 animate-fadeIn font-sans">
       {/* Hero / Profile Section */}
@@ -45,7 +26,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           {/* Main Info (Left on desktop) */}
-          <div className="md:col-span-8 space-y-5 order-2 md:order-1">
+          <div className="md:col-span-8 space-y-5">
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 text-xs font-semibold uppercase tracking-wider border border-teal-200/60 dark:border-teal-800/60">
               <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400 animate-pulse" />
               {authorData.role} • Seeking PhD Advisor
@@ -62,13 +43,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate }) => {
                 <MapPin className="w-4 h-4 text-stone-400" />
                 <span>{authorData.institution}</span>
               </div>
-              <a
-                href={`tel:${authorData.phone}`}
-                className="flex items-center gap-1.5 hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
-              >
-                <Phone className="w-4 h-4 text-stone-400" />
-                <span>{authorData.phone}</span>
-              </a>
               <a
                 href={`mailto:${authorData.email}`}
                 className="flex items-center gap-1.5 hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
@@ -138,46 +112,28 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* Profile Image & Academic Badges (Right on desktop) */}
-          <div className="md:col-span-4 flex flex-col items-center md:items-end order-1 md:order-2">
-            <div className="relative group">
-              <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-2xl overflow-hidden shadow-md border-4 border-stone-100 dark:border-stone-800 bg-stone-200 dark:bg-stone-800">
-                <img
-                  src={currentAvatar}
-                  alt={authorData.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  onError={(e) => {
-                    (e.target as HTMLElement).style.display = "none";
-                  }}
-                />
-              </div>
-
-              <div className="absolute -bottom-2 -right-2 bg-teal-700 dark:bg-teal-600 text-white p-2 rounded-xl shadow-lg">
-                <Sparkles className="w-4 h-4" />
-              </div>
-            </div>
-
-            {/* Quick Academic Affiliations Card */}
-            <div className="mt-4 w-full bg-stone-50 dark:bg-stone-800/50 border border-stone-200/80 dark:border-stone-700/60 rounded-xl p-4 text-xs space-y-2.5">
-              <div className="font-semibold text-stone-900 dark:text-stone-200 uppercase tracking-wider text-[11px] text-stone-500 dark:text-stone-400">
+          {/* Academic Standing & Roles (Right on desktop) */}
+          <div className="md:col-span-4 flex flex-col justify-start">
+            <div className="w-full bg-stone-50 dark:bg-stone-800/50 border border-stone-200/80 dark:border-stone-700/60 rounded-xl p-5 text-xs space-y-3.5 shadow-xs">
+              <div className="font-semibold text-stone-900 dark:text-stone-200 uppercase tracking-wider text-[11px] text-stone-500 dark:text-stone-400 border-b border-stone-200/60 dark:border-stone-700/60 pb-2">
                 Academic Standing & Roles
               </div>
-              <div className="flex items-start gap-2 text-stone-700 dark:text-stone-300">
+              <div className="flex items-start gap-2.5 text-stone-700 dark:text-stone-300">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                 <span>
-                  <strong>Verified Peer Reviewer:</strong> IEEE Transactions on Multimedia (TMM)
+                  <strong className="text-stone-900 dark:text-stone-100">Verified Peer Reviewer:</strong> IEEE Transactions on Multimedia (TMM)
                 </span>
               </div>
-              <div className="flex items-start gap-2 text-stone-700 dark:text-stone-300">
+              <div className="flex items-start gap-2.5 text-stone-700 dark:text-stone-300">
                 <Award className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
                 <span>
-                  <strong>MSc in Data Science & Mobiquity:</strong> ENICarthage & INNOV'COM (Grade A: 15.81/20, Thesis: 17/20)
+                  <strong className="text-stone-900 dark:text-stone-100">MSc in Data Science & Mobiquity:</strong> ENICarthage & INNOV'COM (Grade A: 15.81/20, Thesis: 17/20)
                 </span>
               </div>
-              <div className="flex items-start gap-2 text-stone-700 dark:text-stone-300">
+              <div className="flex items-start gap-2.5 text-stone-700 dark:text-stone-300">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
                 <span>
-                  <strong>National Engineering Prep (CPGE):</strong> IPEIM Ranked 8 / 130
+                  <strong className="text-stone-900 dark:text-stone-100">National Engineering Prep (CPGE):</strong> IPEIM Ranked 8 / 130
                 </span>
               </div>
             </div>
