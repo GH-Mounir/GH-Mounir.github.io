@@ -1,39 +1,38 @@
-import React, { useState, useMemo } from 'react';
-import { publications, Publication } from '../data/portfolioData';
-import { Search, BookOpen, Copy, Check, ChevronDown, ChevronUp, FileText, ExternalLink, Filter } from 'lucide-react';
+import React, { useState, useMemo } from "react";
+import { publications, Publication } from "../data/portfolioData";
+import { Search, BookOpen, Copy, Check, ChevronDown, ChevronUp, FileText, ExternalLink, Filter } from "lucide-react";
 
 export const PublicationsSection: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [expandedBibtex, setExpandedBibtex] = useState<Record<string, boolean>>({});
   const [expandedAbstract, setExpandedAbstract] = useState<Record<string, boolean>>({});
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  const categories = ['All', 'AI & Inference', 'Multimedia QoE', 'Foundations & Physics'];
+  const categories = ["All", "AI & Inference", "Multimedia QoE", "Foundations & Physics"];
 
   const filteredPublications = useMemo(() => {
     return publications.filter((pub) => {
       const matchesSearch =
-        searchQuery.trim() === '' ||
+        searchQuery.trim() === "" ||
         pub.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        pub.authors.some(a => a.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        pub.authors.some((a) => a.toLowerCase().includes(searchQuery.toLowerCase())) ||
         pub.venue.toLowerCase().includes(searchQuery.toLowerCase()) ||
         pub.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        pub.badges?.some(b => b.toLowerCase().includes(searchQuery.toLowerCase()));
+        pub.badges?.some((b) => b.toLowerCase().includes(searchQuery.toLowerCase()));
 
-      const matchesCategory =
-        selectedCategory === 'All' || pub.category === selectedCategory;
+      const matchesCategory = selectedCategory === "All" || pub.category === selectedCategory;
 
       return matchesSearch && matchesCategory;
     });
   }, [searchQuery, selectedCategory]);
 
   const toggleBibtex = (id: string) => {
-    setExpandedBibtex(prev => ({ ...prev, [id]: !prev[id] }));
+    setExpandedBibtex((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   const toggleAbstract = (id: string) => {
-    setExpandedAbstract(prev => ({ ...prev, [id]: !prev[id] }));
+    setExpandedAbstract((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   const copyBibtex = (id: string, text?: string) => {
@@ -51,9 +50,7 @@ export const PublicationsSection: React.FC = () => {
           <BookOpen className="w-3 h-3 text-teal-600 dark:text-teal-400" />
           Academic Bibliography
         </div>
-        <h1 className="text-3xl font-extrabold text-stone-900 dark:text-stone-100 font-serif">
-          Publications & Preprints
-        </h1>
+        <h1 className="text-3xl font-extrabold text-stone-900 dark:text-stone-100 font-serif">Publications & Preprints</h1>
         <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 mt-1">
           Working papers, preprints, manuscripts, and foundational references in reverse chronological order.
         </p>
@@ -72,7 +69,7 @@ export const PublicationsSection: React.FC = () => {
           />
           {searchQuery && (
             <button
-              onClick={() => setSearchQuery('')}
+              onClick={() => setSearchQuery("")}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-stone-400 hover:text-stone-600 dark:hover:text-stone-200"
             >
               Clear
@@ -92,8 +89,8 @@ export const PublicationsSection: React.FC = () => {
               onClick={() => setSelectedCategory(cat)}
               className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
                 selectedCategory === cat
-                  ? 'bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 font-semibold shadow-xs'
-                  : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-stone-700'
+                  ? "bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 font-semibold shadow-xs"
+                  : "bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-stone-700"
               }`}
             >
               {cat}
@@ -108,7 +105,10 @@ export const PublicationsSection: React.FC = () => {
           <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-12 text-center text-stone-500 dark:text-stone-400">
             <p className="font-medium text-base">No publications found matching your search.</p>
             <button
-              onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
+              onClick={() => {
+                setSearchQuery("");
+                setSelectedCategory("All");
+              }}
               className="mt-3 text-xs text-teal-700 dark:text-teal-400 font-semibold hover:underline"
             >
               Reset all filters
@@ -146,39 +146,31 @@ export const PublicationsSection: React.FC = () => {
                     ))}
                   </div>
 
-                  <span className="text-xs font-mono font-semibold text-stone-500 dark:text-stone-400">
-                    {pub.year}
-                  </span>
+                  <span className="text-xs font-mono font-semibold text-stone-500 dark:text-stone-400">{pub.year}</span>
                 </div>
 
                 {/* Title */}
-                <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100 font-serif leading-snug">
-                  {pub.title}
-                </h2>
+                <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100 font-serif leading-snug">{pub.title}</h2>
 
                 {/* Authors */}
                 <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-300">
                   {pub.authors.map((author, aIdx) => {
-                    const isMounir = author.toLowerCase().includes('gharsallah');
+                    const isMounir = author.toLowerCase().includes("gharsallah");
                     return (
                       <span key={aIdx}>
                         {isMounir ? (
-                          <strong className="text-teal-800 dark:text-teal-300 underline underline-offset-2 font-semibold">
-                            {author}
-                          </strong>
+                          <strong className="text-teal-800 dark:text-teal-300 underline underline-offset-2 font-semibold">{author}</strong>
                         ) : (
                           author
                         )}
-                        {aIdx < pub.authors.length - 1 ? ', ' : ''}
+                        {aIdx < pub.authors.length - 1 ? ", " : ""}
                       </span>
                     );
                   })}
                 </p>
 
                 {/* Venue */}
-                <p className="text-xs font-medium text-stone-500 dark:text-stone-400 italic">
-                  {pub.venue}
-                </p>
+                <p className="text-xs font-medium text-stone-500 dark:text-stone-400 italic">{pub.venue}</p>
 
                 {/* Action buttons (Abstract, BibTeX, DOI, PDF) */}
                 <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-stone-100 dark:border-stone-800/80">
@@ -227,9 +219,7 @@ export const PublicationsSection: React.FC = () => {
                 {/* Expandable Abstract Box */}
                 {isAbstractOpen && pub.abstract && (
                   <div className="p-3.5 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200/70 dark:border-stone-700/60 text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed animate-fadeIn">
-                    <p className="font-semibold text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wider mb-1">
-                      Abstract
-                    </p>
+                    <p className="font-semibold text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wider mb-1">Abstract</p>
                     {pub.abstract}
                   </div>
                 )}

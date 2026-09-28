@@ -1,6 +1,6 @@
-import React from 'react';
-import { ArrowUp, Brain } from 'lucide-react';
-import { authorData } from '../data/portfolioData';
+import React from "react";
+import { ArrowUp, Brain } from "lucide-react";
+import { authorData } from "../data/portfolioData";
 
 interface FooterProps {
   onNavigate: (tab: string) => void;
@@ -8,7 +8,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -25,28 +25,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           <div className="flex items-center gap-4 text-xs font-medium">
-            <button
-              onClick={() => onNavigate('about')}
-              className="hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
-            >
+            <button onClick={() => onNavigate("about")} className="hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
               About
             </button>
-            <button
-              onClick={() => onNavigate('cv')}
-              className="hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
-            >
+            <button onClick={() => onNavigate("cv")} className="hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
               CV
             </button>
-            <button
-              onClick={() => onNavigate('publications')}
-              className="hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
-            >
+            <button onClick={() => onNavigate("publications")} className="hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
               Publications
             </button>
-            <button
-              onClick={() => onNavigate('contact')}
-              className="hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
-            >
+            <button onClick={() => onNavigate("contact")} className="hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
               Contact
             </button>
             <span className="text-stone-300 dark:text-stone-700">|</span>

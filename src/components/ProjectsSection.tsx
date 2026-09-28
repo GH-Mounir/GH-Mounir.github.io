@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { projects, Project } from '../data/portfolioData';
-import { Briefcase, Sparkles, X, Layers } from 'lucide-react';
+import React, { useState } from "react";
+import { projects, Project } from "../data/portfolioData";
+import { Briefcase, Sparkles, X, Layers } from "lucide-react";
 
 export const ProjectsSection: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -13,9 +13,7 @@ export const ProjectsSection: React.FC = () => {
           <Briefcase className="w-3 h-3 text-teal-600 dark:text-teal-400" />
           Research & Systems
         </div>
-        <h1 className="text-3xl font-extrabold text-stone-900 dark:text-stone-100 font-serif">
-          Selected Projects & Research Initiatives
-        </h1>
+        <h1 className="text-3xl font-extrabold text-stone-900 dark:text-stone-100 font-serif">Selected Projects & Research Initiatives</h1>
         <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 mt-1">
           Theoretical investigations, edge prototypes, and algorithmic implementations.
         </p>
@@ -35,7 +33,7 @@ export const ProjectsSection: React.FC = () => {
                 alt={proj.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
+                  (e.target as HTMLElement).style.display = "none";
                 }}
               />
               <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-stone-900/80 backdrop-blur-xs text-white text-[11px] font-medium">
@@ -52,22 +50,15 @@ export const ProjectsSection: React.FC = () => {
                 <h2 className="font-bold text-lg text-stone-900 dark:text-stone-100 font-serif group-hover:text-teal-700 dark:group-hover:text-teal-300 transition-colors">
                   {proj.title}
                 </h2>
-                <p className="text-xs text-teal-800 dark:text-teal-400 font-medium">
-                  {proj.subtitle}
-                </p>
-                <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                  {proj.description}
-                </p>
+                <p className="text-xs text-teal-800 dark:text-teal-400 font-medium">{proj.subtitle}</p>
+                <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">{proj.description}</p>
               </div>
 
               {/* Tags & Action */}
               <div className="space-y-3 pt-2">
                 <div className="flex flex-wrap gap-1.5">
                   {proj.tags.map((tag, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="text-[11px] px-2 py-0.5 rounded-md bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300"
-                    >
+                    <span key={tIdx} className="text-[11px] px-2 py-0.5 rounded-md bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">
                       {tag}
                     </span>
                   ))}
@@ -95,12 +86,8 @@ export const ProjectsSection: React.FC = () => {
                 <span className="text-xs font-semibold px-2 py-0.5 rounded bg-teal-50 dark:bg-teal-950/80 text-teal-800 dark:text-teal-300 font-mono">
                   {selectedProject.category} • {selectedProject.year}
                 </span>
-                <h3 className="text-2xl font-bold text-stone-900 dark:text-stone-100 font-serif mt-2">
-                  {selectedProject.title}
-                </h3>
-                <p className="text-sm text-teal-800 dark:text-teal-400 font-medium">
-                  {selectedProject.subtitle}
-                </p>
+                <h3 className="text-2xl font-bold text-stone-900 dark:text-stone-100 font-serif mt-2">{selectedProject.title}</h3>
+                <p className="text-sm text-teal-800 dark:text-teal-400 font-medium">{selectedProject.subtitle}</p>
               </div>
               <button
                 onClick={() => setSelectedProject(null)}
@@ -111,11 +98,7 @@ export const ProjectsSection: React.FC = () => {
             </div>
 
             <div className="h-56 rounded-xl overflow-hidden bg-stone-100 dark:bg-stone-800">
-              <img
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                className="w-full h-full object-cover"
-              />
+              <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover" />
             </div>
 
             <div className="space-y-4 text-sm text-stone-700 dark:text-stone-300 leading-relaxed">

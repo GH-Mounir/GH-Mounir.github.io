@@ -1,6 +1,6 @@
-import React from 'react';
-import { newsItems } from '../data/portfolioData';
-import { Bell, Calendar, Tag } from 'lucide-react';
+import React from "react";
+import { newsItems } from "../data/portfolioData";
+import { Bell, Calendar, Tag } from "lucide-react";
 
 export const NewsSection: React.FC = () => {
   return (
@@ -11,9 +11,7 @@ export const NewsSection: React.FC = () => {
           <Bell className="w-3 h-3 text-teal-600 dark:text-teal-400" />
           Announcements & Milestones
         </div>
-        <h1 className="text-3xl font-extrabold text-stone-900 dark:text-stone-100 font-serif">
-          Academic News & Timeline
-        </h1>
+        <h1 className="text-3xl font-extrabold text-stone-900 dark:text-stone-100 font-serif">Academic News & Timeline</h1>
         <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 mt-1">
           Recent research updates, scholarly invitations, paper submissions, and opportunities.
         </p>
@@ -40,13 +38,9 @@ export const NewsSection: React.FC = () => {
                 )}
               </div>
 
-              <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100 font-serif">
-                {item.title}
-              </h2>
+              <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100 font-serif">{item.title}</h2>
 
-              <p className="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-                {item.content}
-              </p>
+              <p className="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">{item.content}</p>
             </div>
           </div>
         ))}

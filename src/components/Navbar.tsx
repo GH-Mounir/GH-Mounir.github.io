@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Sun, Moon, Menu, X, BookOpen, User, FileText, Briefcase, Bell, Mail, Brain } from 'lucide-react';
+import React, { useState } from "react";
+import { Sun, Moon, Menu, X, BookOpen, User, FileText, Briefcase, Bell, Mail, Brain } from "lucide-react";
 
 interface NavbarProps {
   activeTab: string;
@@ -12,12 +12,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, isDark,
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'about', label: 'About', icon: User },
-    { id: 'cv', label: 'CV / Resume', icon: FileText },
-    { id: 'publications', label: 'Publications', icon: BookOpen },
-    { id: 'projects', label: 'Projects', icon: Briefcase },
-    { id: 'news', label: 'News', icon: Bell },
-    { id: 'contact', label: 'Contact', icon: Mail },
+    { id: "about", label: "About", icon: User },
+    { id: "cv", label: "CV / Resume", icon: FileText },
+    { id: "publications", label: "Publications", icon: BookOpen },
+    { id: "projects", label: "Projects", icon: Briefcase },
+    { id: "news", label: "News", icon: Bell },
+    { id: "contact", label: "Contact", icon: Mail },
   ];
 
   return (
@@ -25,10 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, isDark,
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo / Brand */}
-          <button
-            onClick={() => setActiveTab('about')}
-            className="flex items-center gap-2.5 text-left group focus:outline-none"
-          >
+          <button onClick={() => setActiveTab("about")} className="flex items-center gap-2.5 text-left group focus:outline-none">
             <div className="w-8 h-8 rounded-lg bg-teal-600/10 dark:bg-teal-500/20 text-teal-700 dark:text-teal-300 flex items-center justify-center font-bold text-lg group-hover:scale-105 transition-transform">
               <Brain className="w-5 h-5" />
             </div>
@@ -50,11 +47,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, isDark,
                   onClick={() => setActiveTab(item.id)}
                   className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-150 ${
                     isActive
-                      ? 'bg-stone-200/70 dark:bg-stone-800 text-teal-800 dark:text-teal-300 font-semibold shadow-xs'
-                      : 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800/50'
+                      ? "bg-stone-200/70 dark:bg-stone-800 text-teal-800 dark:text-teal-300 font-semibold shadow-xs"
+                      : "text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800/50"
                   }`}
                 >
-                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-teal-700 dark:text-teal-400' : 'text-stone-400 dark:text-stone-500'}`} />
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? "text-teal-700 dark:text-teal-400" : "text-stone-400 dark:text-stone-500"}`} />
                   {item.label}
                 </button>
               );
@@ -108,11 +105,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, isDark,
                 }}
                 className={`w-full flex items-center gap-2.5 px-3 py-2 text-base font-medium rounded-md text-left transition-colors ${
                   isActive
-                    ? 'bg-teal-50 dark:bg-teal-950/40 text-teal-800 dark:text-teal-300 font-semibold'
-                    : 'text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800/60'
+                    ? "bg-teal-50 dark:bg-teal-950/40 text-teal-800 dark:text-teal-300 font-semibold"
+                    : "text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800/60"
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-teal-600 dark:text-teal-400' : 'text-stone-400'}`} />
+                <Icon className={`w-4 h-4 ${isActive ? "text-teal-600 dark:text-teal-400" : "text-stone-400"}`} />
                 {item.label}
               </button>
             );

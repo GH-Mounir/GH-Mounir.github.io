@@ -1,125 +1,110 @@
 cv:
-  name: Mounir GHARSALLAH
-  label: Independent Researcher | Multimedia (QoE), Process Mining & AI-Augmented Multimedia Systems
-  email: mounir.gharsallah@enicar.ucar.tn
-  phone: "+216 50 78 48 78"
-  location: Tunis, Tunisia
+  name: "Mounir GHARSALLAH"
+  label: "Independent Researcher | Multimedia (QoE), Process Mining & AI-Augmented Multimedia Systems"
+  email: "mounir.gharsallah@enicar.ucar.tn"
+  phone: "+21650784878"
+  location: "Tunis, Tunisia"
   image: "assets/img/prof_pic.jpg"
-  summary: Independent researcher working at the intersection of Multimedia Quality of Experience (QoE), Process Science, Behavioural Science, and AI. My research focuses on modelling user experience through observable event traces generated during multimedia consumption.
+  summary: "Independent researcher working at the intersection of Multimedia Quality of Experience (QoE), Process Science, Behavioural Science, and AI. My research focuses on modelling user experience through observable event traces generated during multimedia consumption."
 
   social_networks:
-    - network: GitHub
-      username: GH-Mounir
-    - network: LinkedIn
-      username: mounir-gharsallah
-    - network: ORCID
-      username: 0000-0002-4200-6035
+    - network: "GitHub"
+      username: "GH-Mounir"
+    - network: "LinkedIn"
+      username: "mounir-gharsallah"
+    - network: "ORCID"
+      username: "0000-0002-4200-6035"
 
   address:
-    city: Tunis
-    region: Tunisia
-    countryCode: TN
+    city: "Tunis"
+    region: "Tunisia"
+    countryCode: "TN"
 
   sections:
-    Research Profile:
-      - label: Multimedia QoE & Process Mining
-        details: Reconstructing user viewing behavior and subjective perceptual evaluations through observable event traces and Markovian state transitions.
-      - label: Sequential Modeling & Active Inference
-        details: Modeling non-commutative probability amplitudes and Active Inference over ordinal MOS evaluations.
-      - label: Edge AI & Fog Streaming Architectures
-        details: Lightweight anomaly detection and real-time streaming telemetry (ITU-T P.910, P.1204, MPEG-DASH, WebRTC).
-
-    Education:
-      - institution: National Engineering School of Carthage (ENICarthage) & INNOV'COM Research Lab – SUP'COM
-        location: Tunis, Tunisia
-        area: Data Science & Mobiquity (Dual Professional Master Degree – EQF Level 7: 120 ECTS)
-        studyType: Master's Degree
-        start_date: 2021-10
-        end_date: 2022-12
-        score: "Grade A (15.81 / 20)"
+    education:
+      - institution: "National Engineering School of Carthage (ENICarthage) & INNOV'COM SUP'COM"
+        area: "Data Science & Mobiquity"
+        degree: "Master's Degree (EQF Level 7: 120 ECTS)"
+        start_date: "2021-10"
+        end_date: "2022-12"
+        location: "Tunis, Tunisia"
         highlights:
-          - "Master's Dissertation: 'Anomaly Detection for QoE Multimedia Prediction in Fog Computing Architecture: Event-Based Novel Data-Set Building' (Grade A: 17/20, Supervised by Pr. Kaouthar Sethom)."
-          - "Designed and deployed crowdsourced Progressive Web Application (PWA) for multimedia QoE experimentation."
-          - "Constructed proprietary event-centric dataset containing >41,000 streaming-related events from 41 human subjects."
-          - "Applied Process Mining techniques to reconstruct viewing behavior and investigated MDP/POMDP representations."
-
-      - institution: Faculty of Sciences of Tunis (FST), University of Tunis El Manar
-        location: Tunis, Tunisia
-        area: Computer Science (Maîtrise – EQF Level 6: 240 ECTS)
-        studyType: Bachelor's Degree
-        start_date: 2004-09
-        end_date: 2011-09
-        score: "Grade B"
+          - "Academic Standing: Grade A (15.81/20) — Master's Dissertation: 'Anomaly Detection for QoE Multimedia Prediction in Fog Computing Architecture' (Grade A: 17/20, Supervised by Pr. Kaouthar Sethom)"
+          - "Constructed proprietary event-centric dataset containing >41,000 streaming events from 41 human subjects (ITU-T P.910, P.1204 compliant)"
+          - "Applied Process Mining and Markovian state representations (MDP/POMDP) for QoE behavior modelling"
+      - institution: "Faculty of Sciences of Tunis (FST), University of Tunis El Manar"
+        area: "Computer Science"
+        degree: "Bachelor's Degree (Maîtrise – EQF Level 6: 240 ECTS)"
+        start_date: "2004-09"
+        end_date: "2011-09"
+        location: "Tunis, Tunisia"
         highlights:
-          - "Graduation Thesis: Simulator of an 8-bit ARM Microprocessor."
-          - "Specialization: Database and Web systems, CPU architecture, software, computational logic, real-time apps."
-
-      - institution: Monastir Preparatory Engineering Institute (IPEIM)
-        location: Monastir, Tunisia
-        area: Science and Technology (CPGE - Prépa)
-        studyType: 1st Cycle (2 years)
-        start_date: 2002-09
-        end_date: 2004-06
-        score: "Ranked 8 / 130 (Concours National)"
+          - "Final Grade: Grade B — Graduation Thesis: 'Simulator of an 8-bit ARM Microprocessor'"
+          - "Specialization: Database and Web systems, CPU architecture, real-time software systems"
+      - institution: "Monastir Preparatory Engineering Institute (IPEIM)"
+        area: "Mathematics & Physics (CPGE - Prépa)"
+        degree: "Diploma of Undergraduate University Studies in Technology"
+        start_date: "2002-09"
+        end_date: "2004-06"
+        location: "Monastir, Tunisia"
         highlights:
-          - "Successfully passed the Tunisian National Engineering Entrance Competition (Concours National)."
-          - "Intensive 2-year cycle in advanced calculus, linear algebra, theoretical physics, mechanics, electronics, thermodynamics, automatism, chemistry, and mathematical modelling."
+          - "Ranked 8 / 130 in the Tunisian National Engineering Entrance Competition (Concours National)"
+          - "Intensive cycle in advanced calculus, linear algebra, theoretical physics, mechanics, electronics, and algorithms"
 
-    Academic Service:
-      - company: IEEE Transactions on Multimedia (IEEE TMM)
-        position: Verified Peer Reviewer
-        location: International / Remote
-        start_date: 2025
-        end_date: Present
-        summary: Active Reviewer for IEEE T-MM evaluating scientific manuscripts in multimedia systems, QoE, adaptive streaming, Edge AI, and multimedia networking.
+    experience:
+      - company: "IEEE Transactions on Multimedia (IEEE TMM)"
+        position: "Verified Peer Reviewer"
+        location: "Remote / International"
+        start_date: "2025-01"
+        end_date: "present"
         highlights:
-          - "Completed 5 peer-review assignments for top-tier IEEE T-MM submissions."
-          - "Verified referee profile registered via ORCID (0000-0002-4200-6035)."
+          - "Active Reviewer for IEEE T-MM evaluating scientific manuscripts in multimedia systems, QoE, adaptive streaming, and Edge AI"
+          - "Completed 5 peer-review assignments for top-tier IEEE T-MM journal submissions (Verified via ORCID 0000-0002-4200-6035)"
+      - company: "Independent Research"
+        position: "Independent Researcher"
+        location: "Tunis, Tunisia"
+        start_date: "2021-10"
+        end_date: "present"
+        highlights:
+          - "Leading fundamental and applied research in QoE event telemetry, process mining, and quantum-cognitive inference"
+          - "Architected crowdsourced mobile PWA experimentation testbed and built interactive VQoE Markov state analytics suite"
 
-    Proprietary Research Artifacts:
-      - name: Proprietary Multimedia QoE Dataset (>41,000 events)
-        summary: Ground-truth video viewing sessions over fog architectures from 41 human subjects, compliant with ITU-T P.910 and P.1204.
-      - name: Crowdsourced Mobile PWA Experimentation Platform
-        summary: Cross-device mobile testbed for real-time video streaming QoE experimentation.
-      - name: Interactive VQoE Analytics Dashboard
-        summary: 10+ modalities with Markov state transitions and anomaly distribution visualizer.
-      - name: Active Inference & Quantum-Cognitive QoE Simulation
-        summary: Python animation-based simulation for modelling non-commutative probability amplitudes over ordinal data.
+    projects:
+      - name: "Proprietary Multimedia QoE Dataset (>41,000 Events)"
+        start_date: "2022"
+        end_date: "2023"
+        highlights:
+          - "High-granularity event-centric dataset capturing real-world video viewing interactions from 41 human subjects"
+          - "Full compliance with ITU-T P.910 and ITU-T P.1204 recommendations"
+      - name: "Active Inference & Quantum-Cognitive QoE Simulation"
+        start_date: "2023"
+        end_date: "present"
+        highlights:
+          - "Python animation-based simulation framework modelling non-commutative probability amplitudes to infer latent human evaluation over ordinal data"
 
-    Certifications:
+    certificates:
       - name: "5G Technology Development and Its Application"
         issuer: "International Telecommunication Union (ITU)"
-        date: "Aug 2023"
-      - name: "Introduction to Service Quality Regulation"
-        issuer: "ITU Academy (Verified Badge)"
-        date: "Nov 2022"
+        date: "2023-08"
+      - name: "Introduction to Service Quality Regulation (Verified Badge)"
+        issuer: "ITU Academy"
+        date: "2022-11"
       - name: "Process Mining: From Theory to Execution (Intermediate Level)"
         issuer: "Celonis"
-        date: "Nov 2022"
+        date: "2022-11"
       - name: "Shorten Your Path to Publication"
         issuer: "Elsevier Researcher Academy"
-        date: "Oct 2023"
+        date: "2023-10"
       - name: "IBM Enterprise Design Thinking & Cloud Developer"
         issuer: "IBM"
-        date: "2021 – 2023"
+        date: "2021-2023"
 
-    Languages:
-      - language: Arabic
-        level: Native / Mother Tongue
-      - language: French
-        level: Proficient User (C2)
-      - language: English
-        level: Proficient User (C1)
-      - language: German
-        level: Basic User (A1/A2)
-
-    Academic Referees:
-      - name: Pr. Walid Barhoumi
-        title: Full Professor, Computer Science, ENICarthage – University of Carthage (SIIVA-LIMTIC Lab)
-        email: walid_barhoumi@yahoo.fr
-      - name: Pr. Khaoula ElBedoui
-        title: Associate Professor, Computer Engineering, ENICarthage
-        email: khaoula.elbedoui@enicar.ucar.tn
-      - name: Pr. Kaouthar Sethom Ben Reguiga
-        title: Professor in Telecommunications, ENICarthage & INNOV'COM SUP'COM
-        email: k_sethombr@yahoo.fr
+    skills:
+      - name: "Programming & ML"
+        details: "Python (PyTorch, TensorFlow, Keras, OpenCV, Scikit-Learn), JavaScript, C++, SQL"
+      - name: "Process Mining & Telemetry"
+        details: "Celonis EMS, PM4Py, Process Science, Markov State Transitions, Video QoE (ITU-T P.910, P.1204), MPEG-DASH, WebRTC"
+      - name: "Sequential Modeling & Statistics"
+        details: "Active Inference, Quantum Cognition, MDP/POMDP, Item Response Theory (IRT), Rasch Model Analysis, SPSS"
+      - name: "Languages"
+        details: "Arabic (Native), French (C2 Proficient), English (C1 Proficient), German (A1/A2 Basic)"
