@@ -52,20 +52,24 @@ jobs:
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
 
-      - name: Install and Build 🔧
+      - name: Install dependencies and Build Jekyll 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
 
-      - name: Build Vite App ⚡
-        run: npm run build --if-present
+      - name: Build Vite App and Merge to Output ⚡
+        run: |
+          npm run build --if-present
+          if [ -d "dist" ]; then
+            cp -r dist/* _site/
+          fi
 
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
-          purgecss -c purgecss.config.js
+          purgecss -c purgecss.config.js || true
 
       - name: Upload artifact 📤
         uses: actions/upload-pages-artifact@v3

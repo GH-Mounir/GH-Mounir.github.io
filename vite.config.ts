@@ -5,6 +5,12 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  // Ensures asset links in index.html resolve properly at root domain (GH-Mounir.github.io)
+  base: "/",
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+  },
   server: {
     host: "0.0.0.0",
     port: 3000,
