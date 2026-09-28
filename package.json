@@ -3,6 +3,7 @@
     "dev": "vite --host 0.0.0.0 --port 3000",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0 --port 3000",
+    "lint": "tsc --noEmit",
     "lint:prettier": "prettier . --check",
     "lint:style-contract": "node test/style_contract.js",
     "test:visual": "playwright test --config test/visual/playwright.config.js"

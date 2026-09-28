@@ -1,5 +1,3 @@
-import profilePic from "../assets/images/mounir_portrait_exact_1790584376178.jpg";
-
 export interface Publication {
   id: string;
   title: string;
@@ -79,7 +77,6 @@ export interface AcademicReferee {
 export interface CVData {
   name: string;
   label: string;
-  phone: string;
   email: string;
   location: string;
   summary: string;
@@ -128,7 +125,6 @@ export const authorData = {
   role: "Independent Researcher",
   titleDetails: "Multimedia (QoE), Process Mining & AI-Augmented Multimedia Systems",
   institution: "Tunis, Tunisia",
-  phone: "+216 50 78 48 78",
   email: "mounir.gharsallah@enicar.ucar.tn",
   orcid: "0000-0002-4200-6035",
   orcidUrl: "https://orcid.org/0000-0002-4200-6035",
@@ -136,7 +132,6 @@ export const authorData = {
   githubUsername: "GH-Mounir",
   linkedin: "https://www.linkedin.com/in/mounir-gharsallah-05791b256/",
   linkedinUsername: "mounir-gharsallah",
-  avatar: profilePic,
   tagline: "Independent Researcher in Multimedia (QoE), Process Mining & AI-Augmented Multimedia Systems",
   bio: [
     "I am an independent researcher working at the intersection of Multimedia Quality of Experience (QoE), Process Science, Behavioural Science, and Artificial Intelligence. My research focuses on modelling user experience through observable event traces generated during multimedia consumption.",
@@ -165,7 +160,6 @@ export const authorData = {
 export const cvData: CVData = {
   name: "Mounir GHARSALLAH",
   label: "Independent Researcher | Multimedia (QoE), Process Mining & AI-Augmented Multimedia Systems",
-  phone: "+216 50 78 48 78",
   email: "mounir.gharsallah@enicar.ucar.tn",
   location: "Tunis, Tunisia",
   orcid: "0000-0002-4200-6035",
