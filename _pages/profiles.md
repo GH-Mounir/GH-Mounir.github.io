@@ -2,27 +2,17 @@
 layout: profiles
 permalink: /people/
 title: people
-description: members of the lab or group
-nav: true
+description: Research profile and scientific interests
+nav: false
 nav_order: 7
 
 profiles:
-  # if you want to include more than one profile, just replicate the following block
-  # and create one content file for each profile inside _pages/
   - align: right
     image: prof_pic.jpg
     content: about_einstein.md
     image_circular: false # crops the image to make it circular
     more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
-  - align: left
-    image: prof_pic.jpg
-    content: about_einstein.md
-    image_circular: false # crops the image to make it circular
-    more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
+      <p>Tunis, Tunisia</p>
+      <p><a href="mailto:mounir.gharsallah@enicar.ucar.tn">mounir.gharsallah@enicar.ucar.tn</a></p>
+      <p><a href="https://orcid.org/0000-0002-4200-6035" target="_blank">ORCID</a></p>
 ---
